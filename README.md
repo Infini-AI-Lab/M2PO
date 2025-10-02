@@ -23,8 +23,8 @@ Extensive evaluation across six model scales (1.7B–32B) demonstrates that M2PO
 
 ## 🗞️ News
 
-- **[2025.09.25]** Blog post released: [Prosperity Before Collapse – M2PO](https://infini-ai-lab.github.io/M2PO/).
-- **[2025.09.25]** Paper preprint available on [arXiv](https://arxiv.org/abs/2510.01161).
+- **[2025.10.2]** Blog post released: [Prosperity Before Collapse – M2PO](https://infini-ai-lab.github.io/M2PO/).
+- **[2025.10.2]** Paper preprint available on [arXiv](https://arxiv.org/abs/2510.01161).
 
 <!-- ---------- -->
 <p align="center">
