@@ -25,7 +25,7 @@
 
 
   <title>Prosperity before Collapse: How Far Can Off-Policy RL Reach with Stale Data on LLMs?</title>
-  <link rel="icon" type="image/x-icon" href="static/images/icon.jpg">
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/icon.jpg"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -52,7 +52,7 @@
 </head>
 <body>
 
-  <section class="hero"  style="background-color: #FFFFFC !important;">
+  <section class="hero"  style="background-color: #FFFFFF !important;">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
@@ -83,8 +83,8 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                    <a href="https://arxiv.org/abs/2506.02177" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://arxiv.org/abs/2510.01161" target="_blank"
+                    class="external-link button is-normal is-rounded is-light">
                     <span class="icon">
                         <i class="ai ai-arxiv"></i>
                     </span>
@@ -94,14 +94,26 @@
 
                 <!-- Github link -->
                 <span class="link-block">
-                    <a href="https://github.com/Infini-AI-Lab/GRESO" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://github.com/Infini-AI-Lab/M2PO/" target="_blank"
+                    class="external-link button is-normal is-rounded is-light">
                     <span class="icon">
                         <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
                     </a>
                 </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/Infini-AI-Lab/M2PO/" target="_blank"
+                  class="external-link button is-normal is-rounded is-light">
+                  <span class="icon">
+                    <!-- <i class="fa-brands fa-notion"></i> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M158.9 164.2C173.8 176.3 179.4 175.4 207.5 173.5L471.8 157.6C477.4 157.6 472.7 152 470.9 151.1L426.9 119.4C418.5 112.9 407.3 105.4 385.8 107.3L129.9 125.9C120.6 126.8 118.7 131.5 122.4 135.2L158.8 164.1zM174.8 225.8L174.8 503.9C174.8 518.8 182.3 524.4 199.1 523.5L489.6 506.7C506.4 505.8 508.3 495.5 508.3 483.4L508.3 207.2C508.3 195.1 503.6 188.5 493.3 189.5L189.7 207.1C178.5 208 174.8 213.6 174.8 225.8zM461.5 240.7C463.4 249.1 461.5 257.5 453.1 258.5L439.1 261.3L439.1 466.6C426.9 473.1 415.7 476.9 406.4 476.9C391.4 476.9 387.7 472.2 376.5 458.2L285 314.5L285 453.5L314 460C314 460 314 476.8 290.6 476.8L226.2 480.5C224.3 476.8 226.2 467.4 232.7 465.6L249.5 460.9L249.5 277.1L226.2 275.2C224.3 266.8 229 254.7 242.1 253.7L311.2 249L406.5 394.6L406.5 265.8L382.2 263C380.3 252.7 387.8 245.3 397.1 244.3L461.6 240.5zM108.4 100.7L374.6 81.1C407.3 78.3 415.7 80.2 436.2 95.1L521.2 154.8C535.2 165.1 539.9 167.9 539.9 179.1L539.9 506.7C539.9 527.2 532.4 539.4 506.3 541.2L197.2 559.8C177.6 560.7 168.2 557.9 158 544.9L95.4 463.7C84.2 448.8 79.5 437.6 79.5 424.5L79.5 133.3C79.5 116.5 87 102.5 108.4 100.6z"/></svg>
+                  </span>
+                  <span>Notion Blog</span>
+                  </a>
+              </span>
 
                 <!-- Video Link
                 <span class="link-block">
@@ -129,7 +141,8 @@
         <div class="content has-text-justified">
           <p>
             <strong style="font-weight: 900;color: #0f598a">TL;DR:</strong>
-            GRESO is a lightweight pre-rollout filter that skips uninformative prompts using reward dynamics, saving RL training time without hurting accuracy.
+            Our work shows that stale data can be as informative as on-policy data if exploited properly. We introduce M2PO, second-moment trust proxy optimization. M2PO significantly reduces the fraction of clipped tokens under high staleness with maintaining stable optimization.
+            Extensive evaluation across six model scales (1.7B–32B) shows that M2PO delivers stable off-policy training even with data stale by <i><u>at least 256 model updates</i></u> and matches on-policy performance.
           </p>
         </div>
       </div>
@@ -138,66 +151,59 @@
 </section>
 
 
-<!-- Paper abstract -->
-<section class="section hero is-light" style="background-color: #FFFFFC !important;">
+<!-- Paper intro -->
+<section class="section hero is-light" style="background-color: #FFFFFF !important;">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3" style="text-align: center;">
-          <img src="static/images/introduction.png" style="height: 43px; display: inline; vertical-align: middle;"/>
+          <!-- <img src="static/images/introduction.png" style="height: 43px; display: inline; vertical-align: middle;"/> -->
            Introduction
         </h2>
         <div class="content has-text-justified">
           <p>
-            Reinforcement learning, such as PPO and GRPO, has powered recent breakthroughs in LLM reasoning.
-            Scaling rollout to sample more prompts enables models to selectively use higher-quality data for training, which can stabilize RL training and improve model performance, but at the cost of significant computational overhead.
-            In this paper, we first show that a substantial portion of this overhead can be avoided by skipping uninformative prompts <em>before rollout</em>.
-            Our analysis of reward dynamics reveals a strong temporal consistency in prompt value: prompts that are uninformative in one epoch of training are likely to remain uninformative in near future epochs.
-            Based on these insights, we propose <strong>GRESO</strong> (<u>GR</u>PO with <u>E</u>fficient <u>S</u>elective R<u>o</u>llout), an online, lightweight pre-rollout filtering algorithm that predicts and skips uninformative prompts using reward training dynamics.
-            By evaluating GRESO on a broad range of math reasoning benchmarks and models, like <i>Qwen2.5-Math-1.5B/7B</i> and <i>DeepSeek-R1-Distill-Qwen-1.5B</i>, we show that GRESO achieves up to
-            <strong>2.4&times; wall-clock time speedup</strong> in rollout and up to
-            <strong>2.0&times; speedup</strong> in total training time without accuracy degradation.
+            Reinforcement learning has been central to recent advances in large language model reasoning, but most algorithms rely on on-policy training that demands fresh rollouts at every update, limiting efficiency and scalability. Asynchronous RL systems alleviate this by decoupling rollout generation from training, yet their effectiveness hinges on tolerating large staleness in rollout data, a setting where existing methods either degrade in performance or collapse. We revisit this challenge and uncover a <em>prosperity-before-collapse</em> phenomenon: stale data can be as informative as on-policy data if exploited properly. Building on this insight, we introduce <b>M2PO</b> (Second-Moment Trust Proxy Optimization), which constrains the second moment of importance weights to suppress only extreme outliers while preserving informative updates. Notably, M2PO sharply reduces the fraction of clipped tokens under high staleness (from 1.22% to 0.006% over training), precisely masking high-variance tokens while maintaining stable optimization. Extensive evaluation across six model scales (1.7B–32B) and eight reasoning benchmarks shows that M2PO delivers stable off-policy training even with data stale by <i><u>at least 256 model updates</i></u> and matches on-policy performance.
           </p>
 
 
-          <h3 class="title is-5" > Rollout Scaling: Better Performance with More Rollouts</h3>
-          <div style="display: flex; align-items: top; gap: 10px;">
+          <!-- <h3 class="title is-5" > More Efficient <em>Rollout Scaling</em> with GRESO </h3> -->
+          <div class="figure">
+              <img src="static/m2po-images/fig1.png" alt="fig1" height="400" />
+          </div>
+          <p style="font-size: 0.9em;"><strong>Figure 1</strong> Comparison of on-policy GRPO and off-policy training under a staleness of 256 model updates on Qwen-2.5-32B.
+            <strong>Left:</strong> Standard GRPO suffers from degradation with stale rollouts, while removing the trust region (GRPO no TR) reveals a clear <em>prosperity-before-collapse</em> phenomenon.
+            In contrast, M2PO achieves stable training and matches on-policy performance even under high staleness.
+            <strong>Right:</strong> Token clipping ratio comparison shows that M2PO dramatically reduces clipping events compared to GRPO, while avoiding training collapse.</p>
+          </p>
+
+          <p>
+            <strong>Why is tolerance to staleness in RL important?</strong> Most RL algorithms for LLMs rely on an on-policy setup: the model must constantly generate fresh(or limited staleness) examples to learn from. This makes training stable and reliable, but also very costly, as each update requires waiting for new rollouts to finish.
+            To get around this inefficiency, researchers have been experimenting with asynchronous RL systems, like AREAL and SLIME. In these systems, rollouts and model training happen independently, often spread across large computing clusters.
+            Such approaches improve resource utilization and enable training to scale more efficiently across large and heterogeneous clusters, but their effectiveness fundamentally relies on the ability of RL algorithms to tolerate rollout staleness without sacrificing stability or performance.
+          </p>
+
+          <!-- Case study -->
+          <div class="content has-text-justified">
+            <!-- <br> -->
+            <!-- <h3 class="title is-5" >  </h3> -->
+            <p>
+              <strong>Study Staleness with Stale-k Training.</strong>
+              To study the effect of stale data in reinforcement learning for large language models, we introduce Stale-$k$ RL training, where the model is updated using data generated $k$ updates earlier.
+              In our setup, each training step performs four model updates, following configurations commonly adopted in recent work. Consequently, even stale-0 ($s=0$) training involves data with a staleness of 0–3 updates, while stale-256 ($s=256$) corresponds to staleness of 256–259 updates. During the first $k$ updates, when no stale model is yet available, the policy is trained on rollouts from the original base model.
+              After this initialization phase, all training data comes from stale models, enabling a controlled study of how staleness influences the dynamics and effectiveness of RL training.
+            </p>
+            <div style="flex: 0 0 100%; max-width: 100%; text-align: center;">
+              <img src="static/m2po-images/stale-comparison.jpg" alt="rollout-scaling" width=300 />
+            </div>
+            <div style="display: flex; align-items: top; gap: 10px;">
               <div style="flex: 1;">
                   <p>
-                        <em>Scaling computational resources to sample responses for more prompts</em> at this rollout stage can enhance reinforcement learning, which allows models to selectively utilize higher-quality data and thus train models with better converged performance. However, scaling up rollouts introduces significant computational overhead, as rollout remains a major bottleneck in RL training. For instance, as shown in the right figures, filtering out uninformative examples<sup>1</sup> and resampling to fill the batch with effective data,also known as Dynamic Sampling (DS), can improve model performance, but it comes at the cost of significantly increased rollout overhead.
-                      </p>
-
-                      <p>
-                        Motivated by this challenge, we aim to investigate the following research question in this work:
-                      </p>
-
-                      <blockquote style="font-style: italic;">
-                        How can we perform more selective rollouts—focusing on sampling more valuable prompts—to make this scaling more efficient?
-                      </blockquote>
+                    As shown in the above figure, we train Qwen2.5-Math-7B with GRPO under varying staleness levels and report test accuracy across eight math reasoning benchmarks. The results reveal a clear trend: as staleness increases, model performance degrades and convergence slows. In particular, low-staleness training achieves higher accuracy, whereas high-staleness training converges more slowly to lower accuracy.
+                  </p>
               </div>
-              <div style="flex: 0 0 30%; max-width: 30%;">
-                  <img src="static/images/rollout-scaling.jpg" alt="rollout-scaling" width=300 />
-              </div>
+            </div>
           </div>
-          <p style="font-size: 0.9em;"><sup>1</sup> In GRPO, many examples yield identical rewards across all responses, resulting in zero advantage and thus contributing no learning signal during training.</p>
-
-          <h3 class="title is-5" > More Efficient <em>Rollout Scaling</em> with GRESO </h3>
-          <div class="figure">
-              <img src="static/images/scaling-compare.png" alt="Scaling" height="400" />
-          </div>
-          <p>
-            In this paper, we aim to design an efficient selective rollout strategy for LLM RL to make rollout scaling more efficient.
-            We begin by analyzing the training dynamics of prompts across epochs and observe a strong temporal consistency across different training epochs.
-            In particular, prompts that yield zero advantage in one epoch are more likely to do so in future epochs as well.
-            This temporal correlation suggests that historical reward dynamics can be leveraged to predict and preemptively skip zero-variance examples before rollout.
-            Building on these observations, we propose <strong>GRESO</strong> (<u>GR</u>PO with <u>E</u>fficient <u>S</u>elective R<u>o</u>llout), an online efficient pre-rollout filtering algorithm that reduces rollout cost by selectively skipping prompts predicted to be zero-variance.
-            Instead of performing filtering after rollout, GRESO estimates a skipping probability for each prompt based on its reward dynamics during training <u>prior to the rollout stage</u>, significantly reducing prompt selection overhead and making the rollout scaling more efficient.
-          </p>
-
-          <p>
-            As shown in the above figure, compared to the baseline method (Dynamic Sampling), our approach (GRESO) reduces rollout overhead by up to <b>2x</b> while achieving comparable training performance, improving the efficiency of rollout scaling.
-            (We train Qwen2.5-Math-1.5B/7B on the DAPO + MATH dataset and evaluate them on five math reasoning benchmarks: MATH500, AMC, Gaokao, Minerva, and Olympiad Bench.)
-          </p>
+          <!-- Case study end -->
 
         </div>
       </div>
@@ -205,44 +211,126 @@
   </div>
 </section>
 
-<section class="section hero is-light">
+
+
+
+<!-- Observation Section -->
+<section class="section hero is-light" style="background-color: #f5f5f5 !important;">
+  <!-- <section class="section hero is-light"> -->
+      <div class="container is-max-desktop">
+          <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                  <h2 class="title is-3" style="text-align: center;"> Observation: Prosperity before Collapse</h2>
+
+                <!-- Rollout end -->
+
+                <!-- Wall-clock time -->
+                <div class="content has-text-justified">
+                  <!-- <h3 class="title is-5" > Up to 2.0x wall-clock time speed-up in training </h3> -->
+                  <div style="flex: 0 0 100%; max-width: 100%; text-align: center;">
+                    <img src="static/m2po-images/pbc.jpg" alt="rollout-scaling" width=450 />
+                  </div>
+                  <div style="display: flex; align-items: top; gap: 10px;">
+                    <div style="flex: 1;">
+                        <p>
+                          <strong>Prosperity before collapse: training without a trust region.</strong>
+                          To disentangle whether the performance drop stems from stale data generated by highly shifted old policies or from biases introduced by the training algorithm, we remove the trust region entirely to remove bias from the training algorithm.
+                          Surprisingly, we observe a distinct <em>prosperity-before-collapse</em> phenomenon. As shown in Figure 2 and above figure, although training without a trust region eventually collapses, it achieves substantially better performance prior to collapse.
+                          In fact, under stale data ($s$=256), the no-clipping setting outperforms clipped training, sometimes even matching on-policy baselines.
+                        </p>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- Wall-clock time end -->
+
+                <!-- Case study -->
+                <div class="content has-text-justified">
+                  <!-- <br> -->
+                  <!-- <h3 class="title is-5" > Case Study: Selection Dynamics </h3> -->
+                  <div style="flex: 0 0 100%; max-width: 100%; text-align: center;">
+                    <img src="static/m2po-images/pivotal-token.jpg" alt="rollout-scaling" width=450 />
+                  </div>
+                  <div style="display: flex; align-items: top; gap: 10px;">
+                    <div style="flex: 1;">
+                        <p>
+                          <strong> Pivotal token masking by $\epsilon$-clipping when training with stale data.</strong>
+                          As also discussed in recent work, $\epsilon$-clipping may inadvertently mask important tokens, preventing them from contributing useful training signals.
+                          We extend this observation to the training with stalenss setting and show that the problem becomes significantly more severe when training with stale data, since larger staleness induces a greater mismatch between the behavior and target policies. As illustrated in the above figure, the clipping ratio increases sharply under large staleness ($s=256$), while remaining much lower in the on-policy baseline.
+                        </p>
+
+                        <p>
+                          To better understand this phenomenon, we conduct a quantitative analysis on 90 million training tokens collected during Qwen2.5-Math-7B training with staleness $256$. Specifically, we gather all training tokens generated between 800 and 1200 model updates, ensuring the model is already in a stable training phase but before convergence. Above figure (right) shows a clear trend: as $|r-1|$ increases, the average token entropy also rises. This indicates that $\epsilon$-clipping disproportionately prunes high-entropy tokens, which are typically the most informative for model improvement. Consequently, clipping under stale data leads to degraded performance.
+
+                          This observation reveals a dilemma: <u><em>while high-entropy tokens are crucial for learning progress, they also introduce instability in the off-policy setting</em></u>, which motivates our key research question:
+
+                        </p>
+
+                        <p>
+                          <i><strong> Can a more accurate and adaptive trust region strategy preserve the benefits of stale data while ensuring stable training? </strong></i>
+                        </p>
+
+
+                    </div>
+                  </div>
+                </div>
+                <!-- Case study end -->
+
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+  <section class="section hero is-light" style="background-color: #FFFFFF !important;">
 <!-- <section class="section hero is-light" style="background-color: #FFFFFC !important;"> -->
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
+              <div class="column is-four-fifths">
                 <h2 class="title is-3" style="text-align: center;">
-                  <img src="static/images/icon.jpg" style="height: 28px; display: inline; vertical-align: -2px;"/>
-                  GRESO: <u>GR</u>PO with <u>E</u>fficient <u>S</u>elective R<u>o</u>llout
+                  <!-- <img src="static/images/icon.jpg" style="height: 28px; display: inline; vertical-align: -2px;"/> -->
+                  M2PO: Second-Moment Trust Policy Optimization
                 </h2>
-                <div class="figure">
-                    <img src="static/images/greso-method.jpg" alt="pipeline" height="400" />
-                </div>
-                <br>
+
                 <div class="content has-text-justified">
-                  <h3 class="title is-5" > Observation: Temporal Correlation of Prompts across Epochs </h3>
                   <p>
-                      Training data typically exhibits strong temporal correlations across epochs.
-                      We hypothesize that zero-variance prompts in GRPO training similarly have such strong correlations in their training dynamics, enabling opportunities for more efficient identification of these prompts prior to the rollout stage.
-                      To test this hypothesis, we conduct a study on the temporal correlation of zero-variance prompts in GRPO training.
-                      Specifically, we train Qwen2.5-Math-7B with GRPO and measure two probabilities to study the temporal correlation of zero-variance prompts:
-                      <b>1)</b> <code>P(Previous|Current)</code>: The probability that a prompt identified as zero-variance in the current epoch was also zero-variance in any previous epoch.
-                      <b>2)</b> <code>P(Current|Previous)</code>: The probability that a prompt identified as zero-variance in any previous epoch remains zero-variance in the current epoch.
-                      </p>
-                      <p>
-                      The results shown in the above Figure (a) indicate that zero-variance prompts exhibit strong temporal correlations throughout training.
-                      We have two key observations:
-                      </p>
-                      <ul>
-                        <li><em><b>1)</b> Prompts previously identified as zero-variance are likely to remain zero-variance:</em><br>
-                        The <code>P(Previous|Current)</code> curve shows that the majority of zero-variance prompts in a given epoch (e.g., over 90%) were also identified as zero-variance in earlier epochs.</li>
-                        <li><em><b>2)</b> Some zero-variance prompts can become effective again in future epochs:</em><br>
-                        The <code>P(Current|Previous)</code> curve shows that approximately 20% of prompts previously labeled as zero-variance become effective prompts that contribute to training again. This suggests that, rather than statically pruning zero-variance prompts, it is beneficial to retain some degree of exploration to help retain potentially valuable prompts.</li>
-                      </ul>
-                  <h3 class="title is-5" > GRESO with Probabilistic Pre-rollout Prompt Filtering </h3>
-                  <p>
-                      Based on the above observations, as shown in the above Figure (b),
-                      we propose a probabilistic filtering strategy based on reward dynamics observed during training. Rather than deterministically discarding prompts that previously yielded identical (i.e., zero-variance) rewards, we assign each prompt a probability of being filtered—this probability increases with the number of recent consecutive rollouts where the prompt showed zero-variance. Concretely, for each prompt, we track how many times in a row it has produced zero-variance responses in the most recent epochs. The more consecutive times this occurs, the more likely the prompt will be skipped in the current rollout. However, we always retain a minimum exploration probability, ensuring that even frequently zero-variance prompts have a small chance of being re-sampled. This approach skips uninformative prompts to exploit training efficiency, while occasionally revisiting them to maintain exploration.
+                    The main source of instability in off-policy RL lies in the distributional mismatch between the behavior policy that generates training data and the current policy being optimized [add cites]. As the divergence between these two distributions grows, importance sampling corrections produce high-variance gradient estimates, leading to noisy and unreliable updates.
+                    Our motivation is therefore to constrain the distributional gap between the behavior policy and the current policy at the batch level, directly coupling the constraint with model updates while preventing over-constraining of token-level variations.
                   </p>
+
+                  <p>
+                    To achieve this goal, we propose M2 metric to measure the distributional gap between the behavior policy and the current policy:
+                  </p>
+                </div>
+
+                <div class="figure">
+                    <img src="static/m2po-images/M2.jpg" alt="pipeline" height="400" />
+                </div>
+
+                <div class="content has-text-justified">
+                  <p>
+                    There are two key advantages of using the above M2 metric for trust region constraint:
+                    First, each per-token estimate is always non-negative, so the constraint can be reliably applied even when $r>1$.
+                    Second, while the batch KL only measures the mean shift between policies,
+                    M2 also reflects the variance of importance weights.
+                    This makes it more sensitive to outliers and noisy tokens with extreme ratios $r_i$.
+                  </p>
+
+                  <p>
+                    To maintain training stability, M2PO applies a masking strategy that selectively excludes tokens until the batch-level M2 of the remaining tokens falls below a predefined threshold $\tau_{M_2}$<sup>1</sup>.
+
+                    Finally, with the result mask $\boldsymbol{M}$, we update the policy by maximizing the following objective:
+                  </p>
+                </div>
+
+                <br>
+                <div class="figure">
+                  <img src="static/m2po-images/M2PO.jpg" alt="pipeline" height="450" />
+                </div>
+
+                <div class="content has-text-justified">
+                  <p style="font-size: 0.9em;"><sup>1</sup>Importantly, we observe that $\tau_{M_2}$ is not a sensitive hyperparameter.
+                    Across all our experiments, we consistently set $\tau_{M_2} = 0.04$, and this single setting proved effective for stabilizing training in all training scenarios.</p>
                 </div>
             </div>
         </div>
@@ -250,35 +338,33 @@
 </section>
 
 <!-- Results Section -->
-<section class="section hero is-light" style="background-color: #FFFFFC !important;">
+<section class="section hero is-light" style="background-color: #F5F5F5 !important;">
 <!-- <section class="section hero is-light"> -->
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-                <h2 class="title is-3" style="text-align: center;"><img src="static/images/exp.jpg" style="height: 35px; display: inline; vertical-align: -5px;"/> Comparable Performance with Fewer Rollouts</h2>
+                <h2 class="title is-3" style="text-align: center;"> Stable Off-Policy Training without Accuracy Drop </h2>
               <!-- Rollout -->
               <div class="content has-text-justified">
                 <!-- <br> -->
                 <!-- Up to 2.4$\times$ wall-clock time speed-up in rollout and  2.0$\times$ speed-up in training. -->
-                <h3 class="title is-5" > No performance drop with up to 3.35x fewer rollouts </h3>
+                <!-- <h3 class="title is-5" > No performance drop with up to 3.35x fewer rollouts </h3> -->
                 <div class="figure">
-                  <img src="static/images/table-rollout-comparison.jpg" alt="table-rollout-comparison" height="350" />
+                  <img src="static/m2po-images/table1.jpg" alt="table-rollout-comparison" height="350" />
                 </div>
                 <p>
-                    To verify the effectiveness of GRESO, we present a comprehensive evaluation of GRESO and Dynamic Sampling (DS), which filters out zero-variance examples and resamples to fill the batch with effective data, across six math reasoning benchmarks, using three different model settings in the above table.
-                    The models are trained on either the DAPO + MATH dataset (DM) or the Open R1 subset (OR1).
-                    We report both the performance and the number of rollouts from the checkpoint that achieves the best average performance across six benchmarks.
-                    Across all training settings, GRESO achieves comparable accuracy as DS, while significantly reducing the number of rollout samples—achieving up to <b>3.35× fewer rollouts</b>.
-                    For example, on Qwen2.5-Math-7B trained on the DM dataset, GRESO achieves a comparable average accuracy to DS (57.5% vs. 57.8%), while reducing the number of rollouts from 13.1M to 6.3M.
-                    These results demonstrate that GRESO maintains performance while substantially lowering the cost on rollouts.
-                    Similar improvements are observed across other evaluation settings.
+                  <strong>Prosperity without collapse: Stable off-policy training without performance degradation using M2PO.</strong>
+                  To verify the effectiveness of M2PO, Table 1 presents a comprehensive comparison of math reasoning performance across eight benchmarks using models from four different families and scales, ranging from 1.7B to 32B parameters. We evaluate multiple reinforcement learning methods under both on-policy and off-policy settings, including GRPO, GSPO, and our proposed M2PO.
+                  The results show that while both GRPO and GSPO often suffer significant performance drops under large staleness, M2PO consistently achieves comparable accuracy to the on-policy baseline in all training settings.
+                  Surprisingly, we notice that, in some model settings, M2PO with $s=256$ even achieves a better performance than M2PO with $s=0$.
+                  For instance, on the Qwen3-Base-1.7B model, we observe that M2PO with $s=256$ (36.6%) outperforms GRPO with $s=0$ (33.0%).
                 </p>
               </div>
 
               <!-- Rollout end -->
 
               <!-- Wall-clock time -->
-              <div class="content has-text-justified">
+              <!-- <div class="content has-text-justified">
                 <h3 class="title is-5" > Up to 2.0x wall-clock time speed-up in training </h3>
                 <div style="display: flex; align-items: top; gap: 10px;">
                   <div style="flex: 1;">
@@ -291,16 +377,14 @@
                           </p>
                   </div>
                   <div style="flex: 0 0 45%; max-width: 45%;">
-                      <img src="static/images/table-wall-clock-time.jpg" alt="rollout-scaling" width=450 />
+                      <img src="static/m2po-images/pbc.jpg" alt="rollout-scaling" width=450 />
                   </div>
                 </div>
-              </div>
+              </div> -->
               <!-- Wall-clock time end -->
 
               <!-- Case study -->
-              <div class="content has-text-justified">
-                <!-- <br> -->
-                <h3 class="title is-5" > Case Study: Selection Dynamics </h3>
+              <!-- <div class="content has-text-justified">
                 <div style="display: flex; align-items: top; gap: 10px;">
                   <div style="flex: 1;">
                       <p>
@@ -313,7 +397,7 @@
                       <img src="static/images/case-study.jpg" alt="rollout-scaling" width=350 />
                   </div>
                 </div>
-              </div>
+              </div> -->
               <!-- Case study end -->
             </div>
         </div>
@@ -322,13 +406,13 @@
 
 
 <!--BibTex citation -->
-<section class="section" id="BibTeX"  style="background-color: #f5f5f5 !important;">
+<section class="section" id="BibTeX"  style="background-color: #FFFFFF !important;">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre style="background-color: #FFFFFC !important;"><code >@article{zheng2025greso,
     title={Prosperity before Collapse: How Far Can Off-Policy RL Reach with Stale Data on LLMs?},
-    author = {Zheng, Haizhong and Zhou, Yang and Bartoldson, Brian R. and Kailkhura, Bhavya and Lai, Fan and Zhao, Jiawei and Chen, Beidi},
-    journal={arXiv preprint arXiv:2506.02177},
+    author = {Zheng, Haizhong and Zhao, Jiawei and Chen, Beidi},
+    journal={arXiv preprint arXiv:2510.01161},
     year={2025}
 }</code></pre>
     </div>
