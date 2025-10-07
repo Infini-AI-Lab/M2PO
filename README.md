@@ -40,9 +40,9 @@ In contrast, M2PO achieves stable training and matches on-policy performance eve
 
 <!-- ------- -->
 
-The official implementation of M2PO will be released here soon!
+<!-- The official implementation of M2PO will be released here soon! -->
 
-<!-- ## Getting Started
+## Getting Started
 Our implementation is based on [volcengine/verl](https://github.com/volcengine/verl) (v0.4.0).
 
 ### 1. Environment Setup
@@ -89,4 +89,4 @@ bash train-scripts/grpo-qwen-math-7b-s0.sh
 bash train-scripts/grpo-qwen-math-7b-s256.sh
 ```
 
-See more scripts in `train-scripts` folder. -->
+See more scripts in `train-scripts` folder.
