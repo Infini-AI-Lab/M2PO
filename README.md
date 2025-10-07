@@ -7,7 +7,7 @@ Haizhong Zheng<sup>1</sup>, Jiawei Zhao<sup>2</sup>, Beidi Chen<sup>1</sup>
 <sup>2</sup>Meta AI
 
 <div align="center">
-[<a href="https://arxiv.org/abs/2510.01161">Paper</a>] | [<a href="https://infini-ai-lab.github.io/M2PO/">Website</a>] | [<a href="https://m2po.notion.site/rl-stale-m2po">Notion Blog!</a>]
+[<a href="https://m2po.notion.site/rl-stale-m2po">Notion Blog!</a>] | [<a href="https://arxiv.org/abs/2510.01161">Paper</a>] | [<a href="https://infini-ai-lab.github.io/M2PO/">Website</a>]
 </div>
 <br>
 
