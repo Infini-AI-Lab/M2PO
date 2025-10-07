@@ -75,7 +75,7 @@ bash train-scripts/generate_datasets.sh
 
 ### 3. Training
 
-Train Qwen Math 7b with GRESO on 8xH100:
+Train Qwen2.5 Math 7b with M2PO on 8xH100:
 
 ```bash
 bash train-scripts/m2po-qwen-math-7b-s256.sh
