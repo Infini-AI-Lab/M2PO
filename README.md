@@ -53,8 +53,6 @@ cd project-folder
 conda create -n verl05 python==3.11
 conda activate verl05
 
-git clone https://github.com/volcengine/verl.git
-cd verl
 USE_MEGATRON=0 bash scripts/install_vllm_sglang_mcore.sh
 pip install latex2sympy2-extended
 pip install math-verify
